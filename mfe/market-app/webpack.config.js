@@ -14,7 +14,6 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
             library: { type: "var", name: "marketApp" },
             filename: "remoteEntry.js",
             exposes: {
-                // './web-components': './src/bootstrap.ts',
                 './MarketIncomes': './src/app/market-finance/market-incomes/market-incomes.component.ts'
             },
             shared: {
