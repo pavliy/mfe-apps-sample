@@ -9,7 +9,6 @@ import { DynamicItemInfo } from 'shared/dynamic-item-info';
 export class MainDataComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit(): void {
   }
 
@@ -19,5 +18,13 @@ export class MainDataComponent implements OnInit {
     componentName: 'MarketIncomesComponent',
     mfeName: 'marketApp',
     exposedModule: './MarketIncomes'
+  }
+
+  purchaseAppInfo: DynamicItemInfo = {
+    remoteEntry: 'http://localhost:9102/remoteEntry.js',
+    remoteName: 'purchaseApp',
+    componentName: 'purchase-app-main-element',
+    mfeName: 'purchaseApp',
+    exposedModule: './PurchaseIsolatedComponents'
   }
 }

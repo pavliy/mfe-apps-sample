@@ -21,15 +21,21 @@ export class WrapperComponent implements AfterContentInit {
     const remoteEntry = this.options?.remoteEntry ?? "";
     const exposedModule = this.options?.exposedModule ?? "";
 
-    loadRemoteModule({
-      exposedModule,
-      remoteEntry,
-      remoteName
-    })
-      .then((_: any) =>  console.log('Done with module loading'))
-      .catch((err: any) => console.error(`error loading ${componentName}:`, err));
-debugger
-      const element = document.createElement(componentName);
+
+    const remoteIsLoaded = document.querySelector(`script[src="${remoteEntry}'"]`);
+    const loadedRemotes = (window as any).loadedRemotes;
+    if (loadedRemotes?.indexOf(remoteEntry) < 0) {
+      (window as any).loadedRemotes.push(remoteEntry);
+      loadRemoteModule({
+        exposedModule,
+        remoteEntry,
+        remoteName
+      })
+        .then((_: any) =>  console.log('Done with module loading'))
+        .catch((err: any) => console.error(`error loading ${componentName}:`, err));
+    }
+
+    const element = document.createElement(componentName);
     this?.vc?.nativeElement.appendChild(element);
   }
 

@@ -18,9 +18,9 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
                 './MarketIncomes': './src/app/market-finance/market-incomes/market-incomes.component.ts'
             },
             shared: {
-              "@angular/core": { singleton: true, eager: true, strictVersion: true, requiredVersion: '~12.2.3' },
-              "@angular/common": { singleton: true, eager: true, strictVersion: true, requiredVersion: '~12.2.3' },
-              "@angular/router": { singleton: true, eager: true, strictVersion: true, requiredVersion: '~12.2.3' }
+              "@angular/core": { singleton: true, strictVersion: true, requiredVersion: '~12.2.3' },
+              "@angular/common": { singleton: true, strictVersion: true, requiredVersion: '~12.2.3' },
+              "@angular/router": { singleton: true, strictVersion: true, requiredVersion: '~12.2.3' }
             }
           })
       ],
