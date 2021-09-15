@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
 import { byPassRouting } from 'src/shared/routing-utils';
 
@@ -14,4 +14,5 @@ export class AppComponent implements OnInit{
     byPassRouting(this.router, window);
   }
   title = 'purchase-app';
+  ngVersion = VERSION.full;
 }
