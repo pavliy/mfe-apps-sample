@@ -16,11 +16,10 @@ export class WrapperComponent implements AfterContentInit {
   @Input() options?: DynamicItemInfo;
 
   ngAfterContentInit(): void {
-    const componentName = this.options?.componentName ?? "";
-    const remoteName = this.options?.mfeName ?? "";
-    const remoteEntry = this.options?.remoteEntry ?? "";
-    const exposedModule = this.options?.exposedModule ?? "";
-
+    const componentName = this.options?.componentName ?? this.route.snapshot.data['componentName'];
+    const remoteName = this.options?.mfeName ?? this.route.snapshot.data['mfeName'];
+    const remoteEntry = this.options?.remoteEntry ?? this.route.snapshot.data['remoteEntry'];
+    const exposedModule = this.options?.exposedModule ?? this.route.snapshot.data['exposedModule'];
 
     const remoteIsLoaded = document.querySelector(`script[src="${remoteEntry}'"]`);
     const loadedRemotes = (window as any).loadedRemotes;

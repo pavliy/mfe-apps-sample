@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { startsWith } from 'shared/routing-utils';
-import { AppComponent } from './app.component';
+import { WrapperComponent } from 'shared/wrapper-component/wrapper';
 
 const routes: Routes = [
   {
     matcher: startsWith('purchaseapp/'),
     pathMatch: "prefix",
-    outlet: 'purchase-core-outlet',
-    component: AppComponent
+    component: WrapperComponent, data: { remoteEntry: 'http://localhost:9102/remoteEntry.js',
+    remoteName: 'purchaseApp',
+    componentName: 'purchase-app-main-element',
+    mfeName: 'purchaseApp',
+    exposedModule: './PurchaseIsolatedComponents'}
   }
 ];
 

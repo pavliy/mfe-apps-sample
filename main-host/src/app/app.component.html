@@ -1,2 +1,16 @@
-<app-main-data></app-main-data>
-<router-outlet name="purchase-core-outlet"></router-outlet>
+<div>
+  <h1>Shared components: </h1>
+  <app-main-data></app-main-data>
+</div>
+<div>
+  <h1>Routing based: </h1>
+  <div>
+    <h2>Navi panel</h2>
+    <p><a routerLink='purchaseapp/a'>Purchase / A</a></p>
+  </div>
+</div>
+<div>
+  <h1>Host router outlet</h1>
+  <router-outlet></router-outlet>
+</div>
+
