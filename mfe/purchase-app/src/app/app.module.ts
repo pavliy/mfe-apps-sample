@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PurchaseBoardsModule } from './purchase-boards/purchase-boards.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PurchaseBoardsModule } from './purchase-boards/purchase-boards.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PurchaseBoardsModule
+    PurchaseBoardsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: []
